@@ -17,6 +17,7 @@ import java.util.Scanner;
 public class UnoOnline 
 {
     private User users[] = new User[100];//room for 100 online players!
+    PasswordValidator pw = new PasswordValidator();
      
     /**
      * Main method with call to private run method, to encapsulate our
@@ -42,7 +43,7 @@ public class UnoOnline
         Scanner sc = new Scanner(System.in);
         System.out.println("please enter your desired user name:");
         String userName = sc.nextLine();
-        User newUser = new User(userName, password);
+        User newUser = new User(userName);
         users[userCount] = newUser;//add the new user to the user list
         userCount++;
         System.out.println("New User Added");
